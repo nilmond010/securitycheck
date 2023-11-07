@@ -33,6 +33,7 @@ namespace SampleAPI.Controllers
 
             }
 
+            if (a == 5) { }
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
