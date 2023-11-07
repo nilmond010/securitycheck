@@ -23,7 +23,10 @@ namespace SampleAPI.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
 
-            var b = abc.TemperatureC;
+            var b = abc.Summary.ToString();
+
+            var fistName = "Nilesh";
+            Console.WriteLine("Hi {0} {1}", fistName);
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
