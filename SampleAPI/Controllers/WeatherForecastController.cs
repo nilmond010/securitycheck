@@ -11,7 +11,8 @@ namespace SampleAPI.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private ILogger<WeatherForecastController> _logger;
+        private WeatherForecast abc;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -21,6 +22,12 @@ namespace SampleAPI.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+
+            var b = abc.Summary.ToString();
+
+            var fistName = "Nilesh";
+            Console.WriteLine("Hi {0} {1}", fistName);
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
