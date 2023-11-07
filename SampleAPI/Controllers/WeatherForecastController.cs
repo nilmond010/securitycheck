@@ -21,6 +21,19 @@ namespace SampleAPI.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+
+            var a = 5;
+
+            try
+            {
+                var b = a / 1;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
