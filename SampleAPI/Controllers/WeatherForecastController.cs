@@ -11,7 +11,8 @@ namespace SampleAPI.Controllers
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private ILogger<WeatherForecastController> _logger;
+        private WeatherForecast abc;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -22,18 +23,7 @@ namespace SampleAPI.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
 
-            var a = 5;
-
-            try
-            {
-                var b = a / 1;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            if (a == 5) { }
+            var b = abc.TemperatureC;
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
