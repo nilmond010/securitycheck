@@ -52,6 +52,7 @@ jobs:
         shell: cmd
         run: |
           dotnet build SampleAPI.sln
+        working-directory: ./securitycheck/securitycheck/SampleAPI
 
       - name: Build and analyze
         shell: powershell
