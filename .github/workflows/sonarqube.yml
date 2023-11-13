@@ -45,8 +45,10 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
 
-      - name: Autobuild Test
-        uses: github/codeql-action/autobuild@v2
+      - name: Build
+        shell: cmd
+        run: |
+          dotnet build SampleAPI.sln
 
       - name: Build and analyze
         shell: powershell
