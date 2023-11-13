@@ -18,6 +18,12 @@ namespace SampleAPI.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
+        public void Redirect(string url)
+        {
+            Response.Redirect(url);
+        }
+
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
